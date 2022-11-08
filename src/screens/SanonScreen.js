@@ -1,13 +1,13 @@
 // Aboutscreen.js
 import React, { Component } from 'react';
-import { StyleSheet, Button, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 
 const SanonScreen = () => {
   return (
     <View style={styles.container}>
       <Image 
         style={styles.photo}
-        source={require('../assets/images/rambo.png')}
+        source={require('../assets/images/rambo.jpg')}
       />
       <Text style={styles.name}>Sanon Kaewobchoey</Text>
     </View>
