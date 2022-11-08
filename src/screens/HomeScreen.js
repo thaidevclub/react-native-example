@@ -59,11 +59,9 @@ export default HomeScreen = ({ navigation }) => {
   };
 
   const onClickItem = (item) => {
-    if (item.id == '1') {
-      navigation.navigate('Sanon');
-    } else {
-      alert('ID: ' + item.id + ' Name: ' + item.name);
-    }
+    if (item.id == '1') {navigation.navigate('Sanon');}
+     else  if (item.id == '3') {navigation.navigate('Suparerk');}
+     else { alert('ID: ' + item.id + ' Name: ' + item.name); }
   }
 
   return (

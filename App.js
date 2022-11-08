@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import SanonScreen from './src/screens/SanonScreen';
+import SuparerkScreen from './src/screens/SuparerkScreen'
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +13,7 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Sanon" component={SanonScreen} />
+        <Stack.Screen name="Suparerk" component={SuparerkScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
