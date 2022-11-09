@@ -22,7 +22,7 @@ const persons = [
       },
       {
         id: "5",
-        name: "Siriphan Nanthasiri",
+        name: "Siripun Nuntasiri โหน่ง",
       },
       {
         id: "6",
@@ -37,7 +37,7 @@ const persons = [
 export default HomeScreen = ({ navigation }) => {
 
   const myItemSeparator = () => {
-    return <View style={{ height: 1, backgroundColor: "grey",marginHorizontal:10}} />;
+    return <View style={{ height: 1, backgroundColor: "red",marginHorizontal:10}} />;
   };
   
   const myListEmpty = () => {
@@ -80,7 +80,7 @@ export default HomeScreen = ({ navigation }) => {
           </Text>
         )}
         ListFooterComponent={() => (
-          <Text style={{ fontSize: 30, textAlign: "center",marginBottom:20,fontWeight:'bold' }}>Thank You</Text>
+          <Text style={{ fontSize: 30, textAlign: "center",marginBottom:20,fontWeight:'bold' }}>Thank You นะจ๊ะ</Text>
         )}
       />
     </SafeAreaView>
@@ -96,6 +96,6 @@ const styles = StyleSheet.create({
   item: {
     padding: 20,
     marginTop: 5,
-    fontSize: 15,
+    fontSize: 20,
   },
 });
