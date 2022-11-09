@@ -18,7 +18,7 @@ const persons = [
       },
       {
         id: "4",
-        name: "Kribovorn Thaviyotsak",
+        name: "Kribovorn Taweeyossak  🥸 🇨🇷 🇨🇷 🇨🇷 🥸",
       },
       {
         id: "5",
@@ -61,6 +61,9 @@ export default HomeScreen = ({ navigation }) => {
   const onClickItem = (item) => { 
     if (item.id == '1') {
       navigation.navigate('Sanon');
+    } else if(item.id === '4') {
+      navigation.navigate('Kritbovorn');
+    
     } else {
       alert('ID: ' + item.id + ' Name: ' + item.name);
     }
