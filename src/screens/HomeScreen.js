@@ -7,30 +7,37 @@ const persons = [
     {
         id: "1",
         name: "Sanon Kaewobchoey",
+        route: "Sanon",
       },
       {
         id: "2",
         name: "Narongphon longjaroen",
+        route: null,
       },
       {
         id: "3",
         name: "Suparerk Manothai",
+        route: null,
       },
       {
         id: "4",
         name: "Kribovorn Thaviyotsak",
+        route: null,
       },
       {
         id: "5",
         name: "Siriphan Nanthasiri",
+        route: null,
       },
       {
         id: "6",
-        name: "George",
+        name: "Jakkaphop Wonglakorn",
+        route: "George",
       },
       {
         id: "7",
         name: "Nattanan Chauymee",
+        route: null,
       },
 ];
 
@@ -59,8 +66,9 @@ export default HomeScreen = ({ navigation }) => {
   };
 
   const onClickItem = (item) => {
-    if (item.id == '1') {
-      navigation.navigate('Sanon');
+    if (item.route === null){item.route = '';}
+    if (item.route != '') {
+      navigation.navigate(item.route);
     } else {
       alert('ID: ' + item.id + ' Name: ' + item.name);
     }
