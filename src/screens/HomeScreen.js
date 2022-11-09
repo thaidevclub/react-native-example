@@ -76,7 +76,7 @@ export default HomeScreen = ({ navigation }) => {
         ListEmptyComponent={myListEmpty}
         ListHeaderComponent={() => (
           <Text style={{ fontSize: 30, textAlign: "center",marginTop:20,fontWeight:'bold',textDecorationLine: 'underline' }}>
-            List of Spartan
+            List of Spartan สปาตั้น
           </Text>
         )}
         ListFooterComponent={() => (
