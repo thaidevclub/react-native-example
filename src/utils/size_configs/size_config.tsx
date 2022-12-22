@@ -37,6 +37,8 @@ class SizeConfig {
     static readonly spaceHead5 = this.screenHeight * 0.04227;   // 26
 
 
+    // Card Main Menu : 120 / 615
+    static readonly cardMenuHeight = this.screenHeight * 0.19512;
 
     // Card List :  72 / 615
     static readonly cardListHeight = this.screenHeight * 0.11707;
