@@ -58,7 +58,7 @@ const globalStyles = StyleSheet.create({
         borderWidth: sc.minSpace * 0.5,
         borderColor: colors.thirdBlue,
         paddingVertical: sc.midSpace,
-        paddingHorizontal: sc.midPad,
+        paddingHorizontal: sc.midSpace,
         backgroundColor: colors.primaryBackground
     }
     
