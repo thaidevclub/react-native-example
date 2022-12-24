@@ -23,6 +23,7 @@ export default CardMainMenuComponent;
 
 const styles = StyleSheet.create({
   card: {
+    flex: 1,
     height: sc.cardMenuHeight,
     backgroundColor: colors.white,
     padding: sc.midSpace,
