@@ -8,4 +8,4 @@ import HamburgerIcon from '../../assets/svg/menu/hamburger.svg';
 
 import LogoReduxSvg from '../../assets/svg/logo.svg';
 
-export { Gradient1, Gradient2, LogoReduxSvg, ArrowLeftIcon, HamburgerIcon } 
+export { Gradient1, Gradient2, LogoReduxSvg, ArrowLeftIcon, HamburgerIcon };

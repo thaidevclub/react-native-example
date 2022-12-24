@@ -1,14 +1,15 @@
-import React, { Fragment } from "react";
+import React, { Fragment, ReactNode } from "react";
 import { SafeAreaView, StatusBar, Text ,View} from 'react-native';
 import NavbarDefaultComponent from "../components/navbars/nav_component/navbar_default_components";
 import { colors } from "../utils/import/import_options";
 
 type Props = {
     title: string,
-    isMain?: boolean
+    isMain?: boolean,
+    content: ReactNode
 }
 
-const MainLayout = ({title, isMain}: Props) => {
+const MainLayout = ({title, isMain, content}: Props) => {
   return (  
     <Fragment>
     <SafeAreaView style={{ flex: 0, backgroundColor: 'transparent' }} />
@@ -19,6 +20,7 @@ const MainLayout = ({title, isMain}: Props) => {
         <View style={[{ flex: 1, backgroundColor: colors.backgroundColorLight }]}>
 
 
+        {content}
 
 
         </View>
