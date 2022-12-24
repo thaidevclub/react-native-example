@@ -6,17 +6,18 @@ import { colors } from "../utils/import/import_options";
 type Props = {
     title: string,
     isMain?: boolean,
-    content: ReactNode
+    content: ReactNode,
+    onPressIconLeft(): void
 }
 
-const MainLayout = ({title, isMain, content}: Props) => {
+const MainLayout = ({title, isMain, content, onPressIconLeft}: Props) => {
   return (  
     <Fragment>
     <SafeAreaView style={{ flex: 0, backgroundColor: 'transparent' }} />
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.backgroundColorLight }}>
       <StatusBar barStyle="light-content" backgroundColor={'transparent'} />
       <View style={[{ flex: 1, backgroundColor: colors.backgroundColorLight }]}>
-        <NavbarDefaultComponent title={title} isMain={isMain}/>
+        <NavbarDefaultComponent title={title} isMain={isMain} onPress={() => onPressIconLeft()}/>
         <View style={[{ flex: 1, backgroundColor: colors.backgroundColorLight }]}>
 
 

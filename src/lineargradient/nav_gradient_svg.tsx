@@ -5,10 +5,10 @@ import LinearGradient from "react-native-linear-gradient";
 const NavGradientSVG = () => {
     return (
         <LinearGradient
-            colors={['#FF6A00', '#EE0979', ]}
+            colors={['#EE0979','#FF6A00',  ]}
             style={styles.linearGradient}
             useAngle={true}
-            angle={262}
+            angle={105}
         >
         </LinearGradient>
     );

@@ -1,10 +1,9 @@
 import React from "react";
-import { FlatList, Text, View } from 'react-native';
+import { Alert, FlatList, Text, View } from 'react-native';
 import CardMainMenuComponent from "../components/cards/card_main_menu_component";
 import { EnumNavbarTitle } from "../enum/navbar/enum_navbar_title";
 import MainLayout from "../layout/main_layout";
 import { saleProductModels } from "../model/sale_product_model";
-import { Mobile } from "../utils/import/import_icons_main";
 import { sc } from "../utils/import/import_options";
 
 const MainScreen = () => {
@@ -12,6 +11,7 @@ const MainScreen = () => {
         <MainLayout
             title={EnumNavbarTitle.main}
             isMain={true}
+            onPressIconLeft={() => Alert.alert('Hambuger')}
             content={
 
                 

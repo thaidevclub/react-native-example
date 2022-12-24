@@ -6,26 +6,27 @@ import { gbs, colors, sc } from "../../../utils/import/import_options";
 
 type NavDefaultProps = {
     title: string,
-    isMain?: boolean
+    isMain?: boolean,
+    onPress(): void
 }
 
-const NavbarDefaultComponent = ({ title, isMain = false }: NavDefaultProps) => {
+const NavbarDefaultComponent = ({ title, isMain = false, onPress }: NavDefaultProps) => {
     return (
         <View style={[{ height: sc.navBarHeight, zIndex: -1 }]}>
 
             <View style={[{ flex: 1 }]}>
                 <NavGradientSVG />
-                <View style={[{ position: "absolute", bottom: -50, zIndex: -2 }]}>
-                    <Gradient1 />
+                <View style={[{ width: '100%', position: "absolute", bottom: -50, zIndex: -2 }]}>
+                    <Gradient1 width={'80%'} />
                 </View>
-                <View style={[{ position: "absolute", bottom: -50, zIndex: -2 }]}>
-                    <Gradient2 />
+                <View style={[{ width: '100%', position: "absolute", bottom: -50, zIndex: -2 }]}>
+                    <Gradient2 width={'50%'} />
                 </View>
                 <View style={[{ flex: 1, flexDirection: 'row', justifyContent: "space-around" }]}>
 
                     <TouchableHighlight
                         underlayColor={'transparent'}
-                        onPress={() => Alert.alert("True Corperation")}
+                        onPress={() => onPress()}
                         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                         {isMain
                             ? <HamburgerIcon width={"100%"} height={"50%"} />
