@@ -1,3 +1,4 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React, { Fragment } from "react";
 import { SafeAreaView, StatusBar, View } from 'react-native';
 import NavbarDefaultComponent from "./src/components/navbars/nav_component/navbar_default_components";
@@ -7,8 +8,10 @@ import { colors } from "./src/utils/import/import_options";
 const App = () => {
   return (
 
-    <MainScreen />
+    <NavigationContainer>
+      <MainScreen />
 
+    </NavigationContainer>
   );
 }
 
