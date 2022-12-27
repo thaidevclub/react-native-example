@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { gbs} from '../utils/import/import_options';
 
 const RootScreen = () => {

@@ -6,14 +6,15 @@ import { colors, gbs, sc } from "../../utils/import/import_options";
 type Props = {
   icon: ReactNode,
   title: string,
-  isTwoLine: boolean
+  isTwoLine: boolean,
+  onPress(): void
 };
 
-const CardMainMenuComponent = ({ icon, title, isTwoLine }: Props) => {
+const CardMainMenuComponent = ({ icon, title, isTwoLine, onPress }: Props) => {
   return (
 
     <TouchableHighlight 
-      onPress={() => Alert.alert("Super")}
+      onPress={() => onPress()}
       underlayColor={'lightgrey'}
       style={[styles.card, {}]}
     >

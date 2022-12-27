@@ -12,7 +12,7 @@ class SizeConfig {
     static readonly head3 = this.screenHeight * 0.035772; // 22
     static readonly head2 = this.screenHeight * 0.032520; // 20
     static readonly head1 = this.screenHeight * 0.029268;   // 18
-    static readonly head = this.screenHeight * 0.2601;  // 16
+    static readonly head = this.screenHeight * 0.02601;  // 16
     static readonly body = this.screenHeight * 0.02276;   // 14
     static readonly title = this.screenHeight * 0.01951;   //  12
     static readonly subtitle = this.screenHeight * 0.016260;  // 10
@@ -24,6 +24,7 @@ class SizeConfig {
 
     static readonly minSpace = this.screenHeight * 0.0025;
     static readonly midSpace = this.screenHeight * 0.005;
+    static readonly maxSpace = this.screenHeight * 0.01;
 
     static readonly spaceCaption = this.screenHeight * 0.013;   // 8
     static readonly spaceSubtitle = this.screenHeight * 0.016260;   // 10
@@ -71,6 +72,9 @@ class SizeConfig {
 
     // Button Height : 46 / 615
     static readonly buttonHeight = this.screenHeight * 0.063535;
+
+    // Button Bottom Bar Height : 80 / 615
+    static readonly buttonBottomBarHeight = this.screenHeight * 0.13;
 
     // CheckBox Height : 28 / 615
     static readonly checkboxHeight = this.screenHeight * 0.03867;

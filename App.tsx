@@ -1,15 +1,25 @@
 import { NavigationContainer } from "@react-navigation/native";
-import React, { Fragment } from "react";
-import { SafeAreaView, StatusBar, View } from 'react-native';
-import NavbarDefaultComponent from "./src/components/navbars/nav_component/navbar_default_components";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
+import { RootStackParamList } from "./src/navigation/type/type";
 import MainScreen from "./src/screens/main_screen";
-import { colors } from "./src/utils/import/import_options";
+import RatingScreen from "./src/screens/ratings/rating_screen";
+import SelectNumberScreen from "./src/screens/select_number/select_number_screen";
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
 
     <NavigationContainer>
-      <MainScreen />
+      <Stack.Navigator initialRouteName="Main" screenOptions={{headerShown: false}} >
+       <Stack.Screen  name="Main" component={MainScreen} />
+       <Stack.Screen name="Rating" component={RatingScreen}  />
+       <Stack.Screen  name="SelectNumber" component={SelectNumberScreen}  />
+      </Stack.Navigator>
+      {/* <Stack.Navigator id="1" screenOptions={{headerShown: false}}>
+        <Stack.Screen name="SelectNumber" component={SelectNumberScreen}/>
+      </Stack.Navigator> */}
 
     </NavigationContainer>
   );

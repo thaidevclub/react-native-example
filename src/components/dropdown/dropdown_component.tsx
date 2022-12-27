@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, Text, TouchableHighlight, View } from 'react-na
 import { Fruit } from "../../screens/home_screen";
 import { CaretDown } from "../../utils/import/import_icons";
 import { gbs, sc } from "../../utils/import/import_options";
-import Spacer from "../spacer/spacer";
+import Spacer from "../spacer/spacer_head";
 
 type DropDownProps = {
     datas: Fruit[],

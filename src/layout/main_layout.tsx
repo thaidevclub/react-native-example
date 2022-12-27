@@ -7,14 +7,15 @@ type Props = {
     title: string,
     isMain?: boolean,
     content: ReactNode,
-    onPressIconLeft(): void
+    onPressIconLeft(): void,
+    backgroundColor?: string
 }
 
-const MainLayout = ({title, isMain, content, onPressIconLeft}: Props) => {
+const MainLayout = ({title, isMain, content, onPressIconLeft, backgroundColor}: Props) => {
   return (  
     <Fragment>
     <SafeAreaView style={{ flex: 0, backgroundColor: 'transparent' }} />
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.backgroundColorLight }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: backgroundColor ?? colors.backgroundColorLight }}>
       <StatusBar barStyle="light-content" backgroundColor={'transparent'} />
       <View style={[{ flex: 1, backgroundColor: colors.backgroundColorLight }]}>
         <NavbarDefaultComponent title={title} isMain={isMain} onPress={() => onPressIconLeft()}/>

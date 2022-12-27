@@ -35,7 +35,7 @@ const NavbarDefaultComponent = ({ title, isMain = false, onPress }: NavDefaultPr
 
                     </TouchableHighlight>
                     <View style={[{ flex: 4, alignItems: 'center', justifyContent: 'center' }]}>
-                        <Text style={[gbs.body, { color: colors.white }]}>{title}</Text>
+                        <Text numberOfLines={1} adjustsFontSizeToFit style={[gbs.body, { color: colors.white }]}>{title}</Text>
                     </View>
                     <View style={[{ flex: 1 }]}></View>
                 </View>

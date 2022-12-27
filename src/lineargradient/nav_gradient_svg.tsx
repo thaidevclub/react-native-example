@@ -8,7 +8,8 @@ const NavGradientSVG = () => {
             colors={['#EE0979','#FF6A00',  ]}
             style={styles.linearGradient}
             useAngle={true}
-            angle={105}
+            locations={[0, 0.7]}
+            angle={45}
         >
         </LinearGradient>
     );

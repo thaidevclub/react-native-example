@@ -4,11 +4,12 @@ import { ApplyNetHomeTrueVisionIcon, BoxTrueIDSimIcon, MobileIcon, MyLotusIcon, 
 export type SaleProductModel = {
     icon: ReactNode,
     title: string,
-    isTwoLine: boolean
+    isTwoLine: boolean,
+    json?: {}
 }
 
 export const saleProductModels: SaleProductModel[] = [
-    {icon: <MobileIcon />, title: 'มือถือ', isTwoLine: false},
+    {icon: <MobileIcon />, title: 'มือถือ', isTwoLine: false, json: {route1: 'Main', route2: "SelectNumber"}},
     {icon: <MyLotusIcon />, title: 'สิทธิพิเศษสำหรับสมาชิกโลตัส', isTwoLine: true},
     {icon: <SimIcon />, title: 'ซิมเบอร์ใหม่', isTwoLine: false},
     {icon: <SimIcon />, title: 'ซิมเติมเงินพร้อมเบอร์', isTwoLine: false},
