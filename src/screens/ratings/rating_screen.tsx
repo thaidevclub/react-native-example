@@ -1,51 +1,55 @@
+import { CommonActions, useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Alert, Text, View } from 'react-native';
+import { Text ,View} from 'react-native';
 import ButtonBottomBar from "../../components/buttons/button/button_bottom_bar";
 import ButtonSingleComponent from "../../components/buttons/button/components/button_single_component";
-import ButtonLink from "../../components/buttons/button_link";
-import CardMainMenuComponent from "../../components/cards/card_main_menu_component";
-import SpacerCaption from "../../components/spacer/spacer_caption";
-import { ButtonPattern } from "../../enum/button/enum_pattern";
+import SpacerBody from "../../components/spacer/spacer_body";
 import MainLayout from "../../layout/main_layout";
-import NavGradientSVG from "../../lineargradient/nav_gradient_svg";
-import { RatingProps } from "../../navigation/type/type";
-import colors from "../../utils/colors/colors";
+import { saleProductModels } from "../../model/sale_product_model";
+import { RatingProps, RootStackParamList } from "../../navigation/type/type";
 import { sc } from "../../utils/import/import_options";
+import SelectNumberScreen from "../select_number/select_number_screen";
 
-const RatingScreen = ({ navigation, route }: RatingProps) => (
-  <MainLayout
-    title={route.params.title}
-    backgroundColor={colors.white}
-    onPressIconLeft={() => navigation.goBack()}
-    content={<View style={[{ flex: 1 }]}>
-      <View style={[{ flex: 1, marginHorizontal: sc.padMid}]}>
-        <SpacerCaption />
-        <ButtonSingleComponent
-          title={route.name}
-          onPress={() => navigation.navigate("Main", { id: "1", title: '', icon: <Text /> })}
-          icon={ButtonPattern.scanSim.icon}
-          hasIcon={true} />
-        <SpacerCaption />
+const RatingScreen = ({navigation, route}: RatingProps) => {
+  let param = saleProductModels[route.params.id]
+  const nextScreen = () => navigation.dispatch(
+    CommonActions.navigate({
+      name: `${param.route1}`,
+      params: {id: route.params.id, route: param.route2}
+    })
+  );
 
-        <View style={[{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'red'}]}>
+    const paramId = param["route1"];
+  
+  console.log(` $$$$$$ ${paramId}`)
+  
+  const next = () => navigation.setParams({id: route.params.id})
+  return (  
+     <MainLayout
+     backgroundColor="#FAFAFA"
+     title={param.title}
+     onPressIconLeft={() => navigation.goBack()}
+     content={
+       <View style={[{flex: 1, backgroundColor: '#FAFAFA'}]}>
+        <SpacerBody />
+        <ButtonSingleComponent title={param.title} onPress={() => {}} />
+         <View style={[{flex: 1, margin: sc.padMid, backgroundColor: 'red'}]}>
 
-          <CardMainMenuComponent
-            title={route.params.title}
-            icon={route.params.icon}
-            isTwoLine={true}
-            onPress={() => { }}
-          />
-        </View>
+          
 
+         </View>
+         <ButtonBottomBar
+          title={param.titleButton}
+          onPress={() => nextScreen()}
+          hasIcon={true}
+          icon={param.iconTitleButton}
+         />
+       </View>
+     }
 
-      </View>
-      <ButtonBottomBar
-        title={ButtonPattern.camera.title}
-        onPress={() => Alert.alert('Hey')}
-        icon={ButtonPattern.camera.icon}
-        hasIcon={true} />
-    </View>} />
-)
+     />
+  );
+}
 
 export default RatingScreen;
 

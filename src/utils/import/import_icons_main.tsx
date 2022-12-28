@@ -6,7 +6,8 @@ import ApplyNetHomeTrueVisionIcon from '../../assets/svg/main_content/apply_net_
 import BoxTrueIDSimIcon from '../../assets/svg/main_content/box_true_id_sim.svg';
 import SpecialCPGroup from '../../assets/svg/main_content/special_cp_group.svg';
 import SpecialFriendMember from '../../assets/svg/main_content/special_friend_member.svg';
+import ThankyouIcon from '../../assets/svg/main_content/thankyou.svg';
 
 import Mobile from '../../assets/svg/mobile.svg';
 
-export { MobileIcon, MyLotusIcon, SimIcon, SimTransferIcon, ApplyNetHomeTrueVisionIcon, BoxTrueIDSimIcon, SpecialCPGroup, SpecialFriendMember, Mobile };
+export { MobileIcon, MyLotusIcon, SimIcon, SimTransferIcon, ApplyNetHomeTrueVisionIcon, BoxTrueIDSimIcon, SpecialCPGroup, SpecialFriendMember, Mobile, ThankyouIcon };

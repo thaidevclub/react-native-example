@@ -27,7 +27,7 @@ const MainScreen = ({navigation, route}: MainProps) => {
                                     icon={item.icon}
                                     title={item.title}
                                     isTwoLine={item.isTwoLine}
-                                    onPress={() => navigation.navigate("Rating", {id: String(index), title: item.title, icon: item.icon})}
+                                    onPress={() => navigation.navigate("Rating", {id: index})}
                                 />
                             )}
                             numColumns={2}
