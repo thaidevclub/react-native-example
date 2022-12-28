@@ -15,7 +15,7 @@ type Props = {
 const ButtonSingleComponent = ({ title, onPress, hasIcon, icon, color }: Props) => {
     return (
 
-        <View style={[{ height: sc.buttonHeight, flexDirection: 'row' }]}>
+        <View style={[{ height: sc.buttonHeight, flexDirection: 'row', flex: 1 }]}>
             <View style={[{ width: sc.padMid }]}></View>
             <View style={[styles.button]}>
                 {/* <NavGradientSVG /> */}

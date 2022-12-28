@@ -6,7 +6,9 @@ export type RootStackParamList = {
     SelectNumber: {id: number, route?: string},
     Verification: {id: number, route?: string},
     Consent: {id: number, route?: string},
-    Success: {id: number, route?: string}
+    Success: {id: number, route?: string},
+    TestHome: {itemId: number, otherParam: string},
+    Detail: {itemId: number, otherParam: string}
 }
 
 export type MainProps = NativeStackScreenProps<RootStackParamList, 'Main'>
@@ -15,3 +17,6 @@ export type SelectNumberProps = NativeStackScreenProps<RootStackParamList, 'Sele
 export type VerificationProps = NativeStackScreenProps<RootStackParamList, 'Verification'>
 export type ConsentProps = NativeStackScreenProps<RootStackParamList, 'Consent'>
 export type SuccessProps = NativeStackScreenProps<RootStackParamList, 'Success'>
+
+export type TestHomeScreenProps = NativeStackScreenProps<RootStackParamList, 'TestHome'>
+export type TestDetailProps = NativeStackScreenProps<RootStackParamList, 'Detail'>
