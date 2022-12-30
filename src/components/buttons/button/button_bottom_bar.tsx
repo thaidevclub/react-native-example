@@ -12,7 +12,7 @@ type Props = {
 
 const ButtonBottomBar = ({title, onPress, hasIcon, icon}: Props) => {
     return (
-        <View style={[styles.container]} >
+        <View style={[styles.container, {paddingHorizontal: sc.padMid}]} >
             <View style={[{ height: sc.head, borderTopColor: 'lavenderblush', borderTopWidth: sc.minSpace, shadowOpacity: 0.05 }]}></View>
             <ButtonSingleComponent
                 onPress={() => onPress()}

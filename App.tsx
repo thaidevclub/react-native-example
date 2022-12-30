@@ -17,7 +17,7 @@ const App = () => {
   return (
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TestHome" screenOptions={{ headerShown: false }} >
+      <Stack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false }} >
         <Stack.Group>
           <Stack.Screen key={"Main"} name="Main" component={MainScreen} />
           <Stack.Screen name="Rating" component={RatingScreen} />
@@ -25,10 +25,10 @@ const App = () => {
           <Stack.Screen name="Verification" component={VerificationScreen} />
           <Stack.Screen name="Consent" component={ConsentScreen} />
           <Stack.Screen name="Success" component={SuccessScreen} />
-
+          <Stack.Screen name="TestHome" component={TestHomeScreen} />
         </Stack.Group>
         <Stack.Group>
-          <Stack.Screen name="TestHome" component={TestHomeScreen} />
+          {/* <Stack.Screen name="TestHome" component={TestHomeScreen} /> */}
           <Stack.Screen name="Detail" component={TestDetailScreen} />
         </Stack.Group>
 

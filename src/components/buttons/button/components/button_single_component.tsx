@@ -8,53 +8,63 @@ type Props = {
     title: string,
     onPress(): void,
     hasIcon?: boolean,
+    hasBorder?: boolean
     icon?: ReactNode,
     color?: string
 }
 
-const ButtonSingleComponent = ({ title, onPress, hasIcon, icon, color }: Props) => {
+const ButtonSingleComponent = ({ title, onPress, hasIcon, icon, color, hasBorder = false }: Props) => {
     return (
 
-        <View style={[{ height: sc.buttonHeight, flexDirection: 'row', flex: 1 }]}>
-            <View style={[{ width: sc.padMid }]}></View>
-            <View style={[styles.button]}>
-                {/* <NavGradientSVG /> */}
+        <View style={[{ height: sc.buttonHeight, flexDirection: 'row' }]}>
+            <View style={[styles.button, { borderWidth: hasBorder ? sc.minSpace : 0, borderColor: hasBorder ? 'red' : '', backgroundColor: hasBorder ? colors.white : colors.white }]}>
                 <TouchableHighlight
-                    
+
                     underlayColor={'lavender'}
                     onPress={() => onPress()}
                     onHideUnderlay={() => <NavGradientSVG />}
                     style={{ flex: 1, backgroundColor: "", alignItems: 'center', justifyContent: 'center' }}
                 >
-                    <LinearGradient
-                        style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center'}}
-                        colors={['#EE0979', '#FF6A00']}
-                        useAngle={true}
-                        locations={[0, 1]}
-                        angle={172.77}
-                    >
-                    {hasIcon
-                        ? <View style={[{ flex: 1, flexDirection: 'row' }]}>
-                            <View style={[{ flex: 1 }]}></View>
-                            <View style={[{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }]}>
-                                {icon}
-                                <Text adjustsFontSizeToFit numberOfLines={1} style={[gbs.head, { color: color ?? colors.white }]}>{title}</Text>
-                            </View>
-                            <View style={[{ flex: 1 }]}></View>
+                    {!hasBorder
+                        ? <LinearGradient
+                            style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center' }}
+                            colors={['#EE0979', '#FF6A00']}
+                            useAngle={true}
+                            locations={[0, 1]}
+                            angle={172.77}
+                        >
+                            {hasIcon
+                                ? <View style={[{ flex: 1, flexDirection: 'row' }]}>
+                                    <View style={[{ flex: 1 }]}></View>
+                                    <View style={[{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }]}>
+                                        {icon}
+                                        <Text adjustsFontSizeToFit numberOfLines={1} style={[gbs.head, { color: color ?? colors.white }]}>{title}</Text>
+                                    </View>
+                                    <View style={[{ flex: 1 }]}></View>
+                                </View>
+                                : <Text style={[gbs.head, { color: color ?? colors.white }]}>{title}</Text>
+                            }
+                        </LinearGradient>
+                        :  <View style={[{flex: 1, width: '100%', alignItems: 'center', justifyContent: 'center', backgroundColor: 'white'}]}>
+                            {hasIcon
+                                ? <View style={[{ flex: 1, flexDirection: 'row' }]}>
+                                    <View style={[{ flex: 1 }]}></View>
+                                    <View style={[{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }]}>
+                                        {icon}
+                                        <Text adjustsFontSizeToFit numberOfLines={1} style={[gbs.head, { color: color ?? hasIcon ? 'red' : colors.white }]}>{title}</Text>
+                                    </View>
+                                    <View style={[{ flex: 1 }]}></View>
+                                </View>
+                                : <Text style={[gbs.head, { color: color ?? "red" }]}>{title}</Text>
+                            }
                         </View>
-                        : <Text style={[gbs.head, { color: color ?? colors.white }]}>{title}</Text>
+                        
                     }
-                    </LinearGradient>
-                
+
                 </TouchableHighlight>
-                
+
             </View>
-            <View style={[{ width: sc.padMid }]}></View>
         </View>
-
-
-
-
 
     );
 }

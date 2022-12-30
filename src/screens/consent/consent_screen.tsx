@@ -7,15 +7,23 @@ import { saleProductModels } from "../../model/sale_product_model";
 import { ConsentProps } from "../../navigation/type/type";
 import colors from "../../utils/colors/colors";
 
-const ConsentScreen = ({navigation, route}: ConsentProps) => {
-  const param = saleProductModels[route.params.id];
-  const paramRoute = route.params.route;
-  const nextScreen = () => navigation.dispatch(  
+const ConsentScreen = ({ navigation, route }: ConsentProps) => {
+  let param = saleProductModels[route.params.id]
+  let k = 5;
+
+  route.params.route === undefined ? k = 5 : k = route.params.route;
+
+  let screen = Object.values(param);
+  console.log(screen)
+
+  const nextScreen = () => navigation.dispatch(
     CommonActions.navigate({
-      name: `${paramRoute}`,
-      params: {id: route.params.id, route: param.route4}
+      name: `${screen[k]}`,
+      params: { id: route.params.id, route: k + 1 }
     })
-  )
+  );
+
+  console.log(screen[k])
   return (
     <MainLayout
       backgroundColor={colors.white}

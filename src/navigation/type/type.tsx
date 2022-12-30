@@ -2,13 +2,13 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack"
 
 export type RootStackParamList = {
     Main: {id: number},
-    Rating: {id: number, route?: string},
-    SelectNumber: {id: number, route?: string},
-    Verification: {id: number, route?: string},
-    Consent: {id: number, route?: string},
-    Success: {id: number, route?: string},
-    TestHome: {itemId: number, otherParam: string},
-    Detail: {itemId: number, otherParam: string}
+    Rating: {id: number, route?: number},
+    SelectNumber: {id: number, route: number},
+    Verification: {id: number, route: number},
+    Consent: {id: number, route: number},
+    Success: {id: number, route: number},
+    TestHome: {id: number, route: number},
+    Detail: {id: number, route: number}
 }
 
 export type MainProps = NativeStackScreenProps<RootStackParamList, 'Main'>

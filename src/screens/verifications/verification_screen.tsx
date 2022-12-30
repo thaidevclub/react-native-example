@@ -9,15 +9,22 @@ import colors from "../../utils/colors/colors";
 
 const VerificationScreen = ({ navigation, route }: VerificationProps) => {
 
-  const param = saleProductModels[route.params.id];
-  const paramRoute = route.params.route;
+  let param = saleProductModels[route.params.id]
+  let k = 5;
+
+  route.params.route === undefined ? k = 5 : k = route.params.route;
+
+  let screen = Object.values(param);
+  console.log(screen)
+
   const nextScreen = () => navigation.dispatch(
     CommonActions.navigate({
-      name: `${paramRoute}`,
-      params: {id: route.params.id, route: param.route3}
+      name: `${screen[k]}`,
+      params: { id: route.params.id, route: k + 1 }
     })
   );
-    console.log(paramRoute)
+
+  console.log(screen[k])
   return (
     <MainLayout
       backgroundColor={colors.white}
@@ -31,7 +38,7 @@ const VerificationScreen = ({ navigation, route }: VerificationProps) => {
           <ButtonBottomBar
             title="Verification"
             onPress={() => nextScreen()}
-           />
+          />
         </View>
       }
     />
